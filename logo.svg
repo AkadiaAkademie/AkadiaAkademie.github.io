@@ -1,0 +1,123 @@
+<svg viewBox="-50 -50 900 174" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css"><![CDATA[
+        polygon.zoom {
+          transform: scale(1.5);
+          transition: transform 0.3s ease-in-out;
+        }
+        polygon.zoom:hover {
+          transform: scale(2);
+        }
+        text {
+          font: 400 40px Roboto, sans-serif;
+          fill: #0000;
+          transition: fill 0.3s ease-in-out;
+          cursor: default;
+        }
+        text:has(+ a:hover) {
+          fill: #000F;
+        }
+        .arrow {
+          stroke-width:3;
+          fill:#0000;
+          transform: scale(0);
+        }
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            2% { transform: rotate(0deg); }
+            4% { transform: rotate(15deg); }
+            6% { transform: rotate(-15deg);}
+            8% { transform: rotate(0deg); }
+        }
+        @keyframes wiggletext {
+            0% { fill: #0000; }
+            2% { fill: #000F; }
+            8% { fill: #000F; }
+            10% { fill: #0000; }
+        }
+        @keyframes wigglearrow {
+            0% { stroke: #0000; transform: scale(0); }
+            2% { stroke: #000F; transform: scale(1); }
+            8% { stroke: #000F; transform: scale(1); }
+            10% { stroke: #0000; transform: scale(0); }
+            100% { stroke: #0000; transform: scale(0); }
+        }
+        @keyframes idle {
+            100% { }
+        }
+        .wiggle {
+          display: inline-block;
+          animation: wiggle 7s infinite;
+        }
+        .wiggle:hover {
+          animation: none;
+        }
+    ]]></style>
+    <defs>
+        <marker id="arrowhead" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto">
+            <polygon points="0 0, 7 2.5, 0 5" />
+        </marker>
+    </defs>
+    <g transform="translate(500,0)">
+        <a href="index.html" target='_top'>
+            <image href="logo_w.png" x="0" y="0" width="300" height="94"/>
+            <polygon id="hide-bg-image-triangles" points="0,0 100,0 80,93 0,93" style="fill:#e39706;"/>
+        </a>
+    </g>
+    <image href="logo_w.png" x="0" y="0" width="300" height="94"/>
+    <polygon id="hide-bg-image-triangles" points="0,0 100,0 80,93 0,93" style="fill:#e39706;"/>
+    <polygon id="hide-bg-image-text" points="100,0 80,93 300,93 300,0" style="fill:#e39706;"/>
+    <!-- center 46 50 -->
+    <g transform="translate(46,50)">
+        <path id="arrow1" class="arrow" d="M100,-20 C90,-50 80,-60 70,-55" marker-end="url(#arrowhead)"></path>
+        <path id="arrow2" class="arrow" d="M95,5 C80,10 95,5 80,10" marker-end="url(#arrowhead)"></path>
+        <path id="arrow3" class="arrow" d="M95,15 C80,80 80,70 35,60" marker-end="url(#arrowhead)"></path>
+
+        <!-- TODO text für mobile geräte drunter -->
+        <text id="text1" x="100" y="15">AKADIA AKADEMIE</text>
+        <a id="link1" href="akadia.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
+            <polygon id="dreieck1" class="zoom" points="2,-3 38.5,-17 2,-43.5" style="fill:#638590;"/>
+        </a>
+
+        <text id="text2" x="100" y="15">EXISTENZGRÜNDUNG</text>
+        <a id="link2" href="existenz.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
+            <polygon id="dreieck2" class="zoom" points="3,0.5  40,-14 31,34" style="fill:#7da1aa;"/>
+        </a>
+        <text id="text3" x="100" y="15">KARRIERE</text>
+        <a id="link3" href="karriere.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
+            <polygon id="dreieck3" class="zoom" points="0,3  28,36.5 -28,36.5" style="fill:#4d6a75;"/>
+        </a>
+        <text id="text4" x="100" y="15">STANDORTE</text>
+        <a id="link4" href="standorte.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
+            <polygon id="dreieck4" class="zoom" points="-3,0.5 -32,34 -41,-13" style="fill:#93b4c2;"/>
+        </a>
+        <text id="text5" x="100" y="15">DOZENTEN</text>
+        <a id="link5" href="dozenten.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
+            <polygon id="dreieck5" class="zoom" points="-2,-3 -39,-17 -2,-44" style="fill:#ffffff;"/>
+        </a>
+        <path id="arrow4" class="arrow" d="M95,5 C80,80 30,60 5,40" marker-end="url(#arrowhead)"></path>
+        <path id="arrow5" class="arrow" d="M100,-20 C90,-50 40,-60 20,-55" marker-end="url(#arrowhead)"></path>
+
+    </g>
+    <script>
+        // <![CDATA[
+            window.addEventListener("DOMContentLoaded", () => {
+                addWiggle();
+            });
+            function removeWiggle() {
+                for (var i=1;i<6;i++) {
+                    document.getElementById('link'+i).style.animation=`idle`;
+                    document.getElementById('text'+i).style.animation=`idle`;
+                    document.getElementById('arrow'+i).style.animation=`idle`;
+                }
+            }
+            function addWiggle() {
+                for (var i=1;i<6;i++) {
+                    document.getElementById('link'+i).style.animation=`wiggle 7s ${i}s infinite`;
+                    document.getElementById('text'+i).style.animation=`wiggletext 7s ${i}s infinite`;
+                    document.getElementById('arrow'+i).style.animation=`wigglearrow 7s ${i}s infinite`;
+                }
+            }
+        // ]]>
+    </script>
+
+</svg>

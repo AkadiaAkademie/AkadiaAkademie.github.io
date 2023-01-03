@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>AKADIA Akademie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <!-- Bootstrap dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- General styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Page specific styles -->
+  <style>
+    label {
+      width: 38%;
+    }
+
+    input {
+      width: 58%;
+    }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<!-- Header Bar -->
+<div class="jumbotron orange text-center p-0 m-0">
+  <object data="logo.svg" width="100%" class="header-object"></object>
+</div>
+
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col mb-3 text-center">
+      <h1 class="align-self-center">Existenzgründungscoaching</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-8">
+      <p>Eigene Firma gründen, aber keine Ahnung wie?</p>
+      <p>Eine Idee und Mut zu haben ist eine gute Grundlage. Akadia hilft bei dem Rest.</p>
+      <p>Aber eins vorweg: Unternehmer sein und bleiben ist ein Prozess, der dir nicht über Nacht eine Rolex und einen
+        Porsche bringt. Es ist ein steiniger Weg mit Höhen und Tiefen. Es kostet, wie man so sagt, Blut, Schweiß und
+        Tränen. Aber das ist es WERT!</p>
+      <p>Alle Dozenten bei Akadia sind selbst Unternehmer. Jeder von ihnen war einmal dort, wo du dich jetzt befindest.
+        Und jeder von ihnen hat es geschafft erfolgreich zu sein. Die Dozenten wissen, worauf es ankommt, was man lieber
+        sein lassen sollte und sie sehen dich und deine Idee.</p>
+
+      <div class="text-center mb-3">
+        <a href="Flyer.pdf" download="Flyer.pdf">
+          <button class="mt-3 btn btn-dark">PDF Download</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img/ExistenzFlyer.jpg" class="d-block mx-auto" width="100%" alt="Existenzgründung">
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron d-flex justify-content-center p-5 m-0">
+  <div class="text-left" style="width: 50%">
+    <form action="https://akadia-akademie.de/wp-json/contact-form-7/v1/contact-forms/1377/feedback"
+          method="post" target="dummyframe">
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" name="ihr-name"><br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="ihre-email"><br><br>
+      <label for="title">Betreff:</label>
+      <input type="text" id="title" name="ihr-betreff"><br><br>
+      <label for="message">Nachricht:</label>
+      <textarea type="text" id="message" name="ihre-nachricht" cols="50" rows="5" style="width: 58%"></textarea><br>
+      <input type="hidden" style="display: none;" name="honeypot-618" value="">
+      <input type="hidden" style="display: none;" name="zustimmung-datenschutz" value="1">
+      <input type="hidden" style="display: none;" name="_wpcf7" value="1377"><br>
+      <input class="mt-3 btn btn-dark w-100" type="submit" value="Schick uns eine Nachricht">
+    </form>
+  </div>
+</div>
+<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+<!-- Inhalt: Download Button -> Flyer -->
+<!-- Inhalt: Kontaktformular -->
+
+
+<!-- Container Sponsoren -->
+<div id="services" class="container-fluid orange content text-center">
+  <div class="row justify-content-center">
+    <div class="col col-md-2 col-md-offset-1 px-2 pt-2 pt-md-0">
+      <a href="https://www.bvmw.de/" target="_blank">
+        <img src="bvmw-weiss.png" alt="BVMW" class="sponsor">
+      </a>
+    </div>
+    <div class="col col-md-2 px-2 pt-2 pt-md-0">
+      <a href="https://www.wjd.de/" target="_blank">
+        <img src="wj-weiss.png" alt="WJ" class="sponsor">
+      </a>
+    </div>
+    <div class="col col-md-2 px-2 pt-2 pt-md-0">
+      <a href="http://apv-zert.de/" target="_blank">
+        <img src="apv-weiss.png" alt="APV" class="sponsor">
+      </a>
+    </div>
+    <div class="col col-md-2 px-2 pt-2 pt-md-0">
+      <a href="https://www.arbeitsagentur.de/" target="_blank">
+        <img src="afa-weiss.png" alt="Bundesagentur für Arbeit" class="sponsor">
+      </a>
+    </div>
+    <div class="col col-md-2 px-2 pt-2 pt-md-0">
+      <a href="https://www.jobcenter-ge.de/" target="_blank">
+        <img src="jobcenter-weiss.png" alt="Jobcenter" class="sponsor">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid content text-left">
+  <div class="row justify-content-center">
+    <div class="col-offset-2 col-8 col-md-offset-0 col-md-4 pt-3 pt-md-0">
+      <h4>Über uns</h4>
+      <ul>
+        <li>Moralischer Kompass</li>
+        <li>Geschäftsführung</li>
+        <li>Social Media</li>
+        <li>Datenschutzerklärung</li>
+        <li>Impressum</li>
+      </ul>
+    </div>
+    <div class="col-offset-2 col-8 col-md-offset-0 col-md-4 pt-3 pt-md-0">
+      <h4>Service</h4>
+      <ul>
+        <li>Strategiegespräch vereinbaren</li>
+        <li>Ansprechpartner</li>
+        <li>AVGS-Gutschein beantragen</li>
+        <li>Partnernetzwerk</li>
+      </ul>
+    </div>
+    <div class="col-offset-2 col-8 col-md-offset-0 col-md-4 pt-3 pt-md-0">
+      <h4>Schnellhilfe</h4>
+      <ul>
+        <li>Login</li>
+        <li>Standort in meiner Nähe</li>
+        <li>Wo ist die nächste Agentur für Arbeit?</li>
+        <li>Wo ist das nächste Jobcenter?</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gefoerdert pt-3">
+    <p>gefördert durch Sachsen-Anhalt Digital Innovation im Projekt
+      "Digitalisierung und Teilautomatisierung der Heranführung an eine selbständige Tätigkeit nach SGB III"</p>
+    <p>Projektzeitraum 20.05.2021 -> 31.12.2021</p>
+    <p>
+      <img src="foerder.jpg">
+    </p>
+  </div>
+</footer>
+
+
+<!-- Bootstrap scripts. See https://getbootstrap.com/docs/4.3/getting-started/introduction/#starter-template -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

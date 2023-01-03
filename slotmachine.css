@@ -1,0 +1,36 @@
+.slotm {
+    margin: 0px auto;
+    width: 700px;
+}
+
+.slotm_mask {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.slotm_items_container {
+    position: absolute;
+}
+
+.slotm_item {
+    min-height: 200px;
+    max-height: 200px;
+    margin: 0px;
+    padding: 0px;
+    background-size: contain;
+    text-align: center;
+}
+
+.item_wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.recipe_if {
+    font-weight: bold;
+    font-size: 70px;
+}

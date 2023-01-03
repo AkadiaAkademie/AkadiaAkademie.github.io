@@ -1,0 +1,114 @@
+/* from https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin */
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+
+body {
+    font: 400 15px Roboto, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+.jumbotron, #services, #neuigkeiten {
+    font-family: Roboto, sans-serif;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.orange {
+    background-color: #e39706;
+    color: #fff;
+}
+.header-object {
+    z-index:100;
+    overflow:visible;
+    max-height:30vh
+    /*position:relative;
+    top:-50px;
+    display: inline-block;*/
+}
+.button {
+    background-color: #e39706;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+.content {
+    padding: 60px 50px;
+}
+.big-logo {
+    width: 70vw;
+    margin-top: 60px;
+    vertical-align: middle;
+}
+img.sponsor {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    img.sponsor {
+        width: 160px;
+    }
+}
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #e39706;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Roboto, sans-serif;
+}
+.navbar li a, .navbar {
+    color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #e39706 !important;
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+footer {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #4d6a75;
+}
+footer h4 {
+    font-size: 26px;
+    margin-top: 26px;
+}
+footer li, footer .gefoerdert {
+    list-style: none;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+.gefoerdert {
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 26px;
+}
+footer ul {
+    padding: 0;
+}
