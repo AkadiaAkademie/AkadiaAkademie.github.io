@@ -19,6 +19,12 @@ body {
     line-height: 1.8;
     color: #818181;
 }
+a {
+    color: #4d6a75;
+}
+a:hover {
+    color: #e39706;
+}
 .jumbotron, #services, #neuigkeiten {
     font-family: Roboto, sans-serif;
     border-radius: 0;
