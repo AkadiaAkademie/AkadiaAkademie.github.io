@@ -15,7 +15,7 @@
 
 
 body {
-    font: 400 15px Roboto, sans-serif;
+    font: 400 24px Roboto, sans-serif;
     line-height: 1.8;
     color: #818181;
 }
@@ -97,8 +97,7 @@ img.sponsor {
     color: #fff !important;
 }
 footer {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 24px;
     color: #4d6a75;
 }
 footer h4 {
