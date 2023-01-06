@@ -25,7 +25,12 @@
     text {
       font-size: 12px;
     }
-
+    .large-text {
+      font-size: 36px;
+    }
+    h1 {
+      font-size: 48px;
+    }
     div {
       color: black;
     }
@@ -65,6 +70,7 @@
 
     function animate(targetId) {
       if (timeoutId) clearTimeout(timeoutId);
+      let click = !!targetId;
       if (targetId) {
         arc = targetId * 20
             + Math.floor(arc / 360) * 360   // anzahl der bisherigen drehungen addieren
@@ -83,7 +89,7 @@
       s.style.oTransform = 'rotate(' + arc + 'deg)';
       s.style.transform = 'rotate(' + arc + 'deg)';
 
-      timeoutId = setTimeout(animate, 2000);
+      timeoutId = setTimeout(animate, (click ? 10000 : 2000));
 
       if (!targetId) {
         targetId = Math.floor(((arc - 20) % 360) / 20 + 1);
@@ -125,10 +131,10 @@
 <!-- Inhalt: Glücksrad mit Standorten -->
 
 <div class="container-fluid">
-  <div class="row standorte-bg pb-5">
-    <div class="text-center col-12 pb-3" style="font-size:4rem">Standorte</div>
+  <div class="row standorte-bg pb-1">
+    <div class="text-center col-12 pb-1" style="font-size:4rem">Standorte</div>
     <svg id="spinwheel"
-         style="max-height: 50vh"
+         style="max-height: 60vh"
          class="col-12 col-sm-12 col-md-8 col-lg-6"
          xmlns="http://www.w3.org/2000/svg"
          width="50%" height="50%"
@@ -136,8 +142,8 @@
       <g transform="translate(110 100)">
         <g id="wheel" class="spin">
           <g id="piece18" class="piece" transform="rotate(  0)">
-            <polygon onclick="top.animate(18)" points="0,0 -100,-18 -100,18" style="fill:#e39706;"/>
-            <text onclick="top.animate(18)" class="so" x="-96" y="4">Dein Sofa?</text>
+            <polygon onclick="top.animate(18, true)" points="0,0 -100,-18 -100,18" style="fill:#e39706;"/>
+            <text onclick="top.animate(18, true)" class="so" x="-96" y="4">Dein Sofa?</text>
           </g>
           <g id="piece17" class="piece" transform="rotate( 20)">
             <polygon onclick="top.animate(17)" points="0,0 -100,-18 -100,18" style="fill:#4d6a75;"/>
@@ -212,7 +218,7 @@
       </g>
       <polygon points="5,95 13,100 5,105" style="stroke:red;stroke-width:2;fill:#0000"/>
     </svg>
-    <div class="col-12 col-sm-12 col-md-4 col-lg-6 text-center">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-6 text-center large-text">
       <div id="text1" class="infotext pt-3">
         <h1>Online</h1>
         <div id="text1short">Von deiner Couch aus</div>
@@ -293,7 +299,7 @@
       </div>
       <div id="text18" class="infotext pt-3">
         <h1>Dein Sofa</h1>
-        <div id="text18short">Von deiner Couch aus</div>
+        <div id="text18short">Zuhause oder im Cafe, wo du gerade bist</div>
       </div>
     </div>
   </div>
