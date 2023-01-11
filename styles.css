@@ -34,6 +34,12 @@ a:hover {
     background-color: #e39706;
     color: #fff;
 }
+.orange a {
+    color: #eee;
+}
+.orange a:hover {
+    color: #fff;
+}
 .header-object {
     z-index:100;
     overflow:visible;
@@ -95,6 +101,14 @@ img.sponsor {
 .navbar-default .navbar-toggle {
     border-color: transparent;
     color: #fff !important;
+}
+#team, #team-arrow {
+    display: none;
+}
+#team-button:hover {
+    color: #e39706 !important;
+    text-decoration: underline;
+    cursor: pointer;
 }
 footer {
     font-size: 24px;

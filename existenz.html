@@ -118,20 +118,30 @@
 <footer class="container-fluid content text-left pb-0">
   <div class="row justify-content-center">
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
-      Unser Team <!--oder Kontakt (aufklappen)-->
+      <a id="team-button" onclick="showTeam()">Unser Team <span id="team-arrow">&#129047;</span></a> <!--oder Kontakt (aufklappen)-->
     </div>
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
       <a href="https://www.facebook.com/AkadiaAkademie/">Social Media</a> <!-- TODO Icons-->
     </div>
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
-      <a href="datenschutz.html">Datenschutzerklärung</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
       <a href="impressum.html">Impressum</a>
     </div>
   </div>
+  <div id="team" class="row justify-content-center orange">
+    <div class="col p-3 mx-0 my-3">
+      <h1>Unser Team</h1>
+      Geschäftsführer: Jens Günther, Katja Ehrentraut<br>
+      Assistenz der Geschäftsführung: Katharina Kühn<br>
+      Telefon: 0800 7639660<br>
+      Mail: <a href="mailto:kontakt@akadia-akademie.de">kontakt@akadia-akademie.de</a>
+    </div>
+  </div>
   <div class="text-center mt-3">Copyright © 2023 AKADIA Akademie GmbH. All Rights Reserved.</div>
 </footer>
+<script src="team.js"></script>
 
 
 <!-- Bootstrap scripts. See https://getbootstrap.com/docs/4.3/getting-started/introduction/#starter-template -->
