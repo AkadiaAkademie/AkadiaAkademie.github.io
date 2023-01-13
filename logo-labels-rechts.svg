@@ -1,4 +1,4 @@
-<svg viewBox="-140 -50 900 180" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="-50 -50 900 174" xmlns="http://www.w3.org/2000/svg">
     <style type="text/css"><![CDATA[
         polygon.zoom {
           transform: scale(1.5);
@@ -14,7 +14,7 @@
           cursor: default;
         }
         text.label {
-          font: 400 20px Roboto, sans-serif;
+          font: 400 30px Roboto, sans-serif;
           fill: #0000;
         }
         text:has(+ a:hover) {
@@ -36,7 +36,7 @@
             0% { fill: #0000; }
             2% { fill: #000F; }
             8% { fill: #000F; }
-            24% { fill: #0000; }
+            14% { fill: #0000; }
         }
         @keyframes idle {
             100% { }
@@ -88,11 +88,11 @@
         <a id="link5" href="dozenten.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
             <polygon id="dreieck5" class="zoom" points="-2,-3 -39,-17 -2,-44" style="fill:#ffffff;"/>
         </a>
-        <text id="label1" class="label" x="45" y="-45">AKADIA AKADEMIE</text>
+        <text id="label1" class="label" x="65" y="-15">AKADIA AKADEMIE</text>
         <text id="label2" class="label" x="60" y="25">EXISTENZGRÜNDUNG</text>
-        <text id="label3" class="label" x="-45" y="75">KARRIERE</text>
-        <text id="label4" class="label" x="-175" y="30">STANDORTE</text>
-        <text id="label5" class="label" x="-150" y="-45">DOZENTEN</text>
+        <text id="label3" class="label" x="60" y="65">KARRIERE</text>
+        <text id="label4" class="label" x="-5" y="40">STANDORTE</text>
+        <text id="label5" class="label" x="10" y="-25">DOZENTEN</text>
 
     </g>
     <script>
