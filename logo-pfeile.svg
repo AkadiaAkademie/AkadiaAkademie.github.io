@@ -13,10 +13,6 @@
           transition: fill 0.3s ease-in-out;
           cursor: default;
         }
-        text.label {
-          font: 400 30px Roboto, sans-serif;
-          fill: #0000;
-        }
         text:has(+ a:hover) {
           fill: #000F;
         }
@@ -36,7 +32,14 @@
             0% { fill: #0000; }
             2% { fill: #000F; }
             8% { fill: #000F; }
-            14% { fill: #0000; }
+            10% { fill: #0000; }
+        }
+        @keyframes wigglearrow {
+            0% { stroke: #0000; transform: scale(0); }
+            2% { stroke: #000F; transform: scale(1); }
+            8% { stroke: #000F; transform: scale(1); }
+            10% { stroke: #0000; transform: scale(0); }
+            100% { stroke: #0000; transform: scale(0); }
         }
         @keyframes idle {
             100% { }
@@ -65,6 +68,9 @@
     <polygon id="hide-bg-image-text" points="100,0 80,93 300,93 300,0" style="fill:#e39706;"/>
     <!-- center 46 50 -->
     <g transform="translate(46,50)">
+        <path id="arrow1" class="arrow" d="M100,-20 C90,-50 80,-60 70,-55" marker-end="url(#arrowhead)"></path>
+        <path id="arrow2" class="arrow" d="M95,5 C80,10 95,5 80,10" marker-end="url(#arrowhead)"></path>
+        <path id="arrow3" class="arrow" d="M95,15 C80,80 80,70 35,60" marker-end="url(#arrowhead)"></path>
 
         <!-- TODO text für mobile geräte drunter -->
         <text id="text1" x="100" y="15">AKADIA AKADEMIE</text>
@@ -88,11 +94,8 @@
         <a id="link5" href="dozenten.html" target='_top' onmouseover="removeWiggle()" onmouseout="addWiggle()">
             <polygon id="dreieck5" class="zoom" points="-2,-3 -39,-17 -2,-44" style="fill:#ffffff;"/>
         </a>
-        <text id="label1" class="label" x="65" y="-15">AKADIA AKADEMIE</text>
-        <text id="label2" class="label" x="60" y="25">EXISTENZGRÜNDUNG</text>
-        <text id="label3" class="label" x="60" y="65">KARRIERE</text>
-        <text id="label4" class="label" x="-5" y="40">STANDORTE</text>
-        <text id="label5" class="label" x="10" y="-25">DOZENTEN</text>
+        <path id="arrow4" class="arrow" d="M95,5 C80,80 30,60 5,40" marker-end="url(#arrowhead)"></path>
+        <path id="arrow5" class="arrow" d="M100,-20 C90,-50 40,-60 20,-55" marker-end="url(#arrowhead)"></path>
 
     </g>
     <script>
@@ -103,13 +106,15 @@
             function removeWiggle() {
                 for (var i=1;i<6;i++) {
                     document.getElementById('link'+i).style.animation=`idle`;
-                    document.getElementById('label'+i).style.animation=`idle`;
+                    document.getElementById('text'+i).style.animation=`idle`;
+                    document.getElementById('arrow'+i).style.animation=`idle`;
                 }
             }
             function addWiggle() {
                 for (var i=1;i<6;i++) {
                     document.getElementById('link'+i).style.animation=`wiggle 7s ${i}s infinite`;
-                    document.getElementById('label'+i).style.animation=`wiggletext 7s ${i}s infinite`;
+                    document.getElementById('text'+i).style.animation=`wiggletext 7s ${i}s infinite`;
+                    document.getElementById('arrow'+i).style.animation=`wigglearrow 7s ${i}s infinite`;
                 }
             }
         // ]]>
