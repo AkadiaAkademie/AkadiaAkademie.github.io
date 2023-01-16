@@ -71,15 +71,16 @@
     function animate(targetId) {
       if (timeoutId) clearTimeout(timeoutId);
       let click = !!targetId;
-
-      let idx = targetId ?? Math.round(arc * 17 / 360);
       if (targetId) {
-        arc = Math.floor(idx * 360 / 17) + Math.floor(arc / 360) * 360;
+        arc = targetId * 20
+            + Math.floor(arc / 360) * 360   // anzahl der bisherigen drehungen addieren
+            + ((targetId * 20) < (arc % 360) ? 360 : 0);  // nicht rückwärts drehen
+        // console.log(targetId, arc);
       } else {
-        let newIdx = idx + (Math.random() * 4 | 0) + 2;
-        if (newIdx % 360 > idx % 360) idx = Math.floor(idx / 17) * 17
         oldArc = arc;
-        arc = Math.floor(newIdx * 360 / 17);
+        arc = arc + (Math.random() * 4 | 0) * 20 + 40;
+        // console.log(oldArc, arc);
+        if (oldArc % 360 > arc % 360) arc = Math.floor(arc / 360) * 360;
       }
       var s = document.getElementById("wheel");
       s.style.webkitTransform = 'rotate(' + arc + 'deg)';
@@ -141,73 +142,77 @@
       <g transform="translate(110 100)">
         <g id="wheel" class="spin">
           <g id="piece18" class="piece" transform="rotate(  0)">
-            <polygon onclick="top.animate(17)" points="0,0 -100,-19 -100,20" style="fill:#e39706;"/>
-            <text onclick="top.animate(17)" class="so" x="-96" y="4">Dein Sofa?</text>
+            <polygon onclick="top.animate(18, true)" points="0,0 -100,-18 -100,18" style="fill:#e39706;"/>
+            <text onclick="top.animate(18, true)" class="so" x="-96" y="4">Dein Sofa?</text>
           </g>
-          <g id="piece17" class="piece" transform="rotate( 21)">
-            <polygon onclick="top.animate(16)" points="0,0 -100,-19 -100,19" style="fill:#4d6a75;"/>
-            <text onclick="top.animate(16)" class="so" x="-96" y="4">POTSDAM</text>
+          <g id="piece17" class="piece" transform="rotate( 20)">
+            <polygon onclick="top.animate(17)" points="0,0 -100,-18 -100,18" style="fill:#4d6a75;"/>
+            <text onclick="top.animate(17)" class="so" x="-96" y="4">POTSDAM</text>
           </g>
-          <g id="piece16" class="piece" transform="rotate( 42)">
-            <polygon onclick="top.animate(15)" points="0,0 -100,-19 -100,19" style="fill:#93b4c2;"/>
-            <text onclick="top.animate(15)" class="so" x="-96" y="4">WUPPERTAL</text>
+          <g id="piece16" class="piece" transform="rotate( 40)">
+            <polygon onclick="top.animate(16)" points="0,0 -100,-18 -100,18" style="fill:#93b4c2;"/>
+            <text onclick="top.animate(16)" class="so" x="-96" y="4">WUPPERTAL</text>
           </g>
-          <g transform="rotate( 63)">
-            <polygon onclick="top.animate(14)" points="0,0 -100,-19 -100,19" style="fill:#638590;"/>
-            <text onclick="top.animate(14)" class="so" x="-96" y="4">ULM</text>
+          <g transform="rotate( 60)">
+            <polygon onclick="top.animate(15)" points="0,0 -100,-18 -100,18" style="fill:#638590;"/>
+            <text onclick="top.animate(15)" class="so" x="-96" y="4">ULM</text>
           </g>
-          <g transform="rotate( 84)">
-            <polygon onclick="top.animate(13)" points="0,0 -100,-19 -100,19" style="fill:#7da1aa;"/>
-            <text onclick="top.animate(13)" class="so" x="-96" y="4">MAGDEBURG</text>
+          <g transform="rotate( 80)">
+            <polygon onclick="top.animate(14)" points="0,0 -100,-18 -100,18" style="fill:#7da1aa;"/>
+            <text onclick="top.animate(14)" class="so" x="-96" y="4">MAGDEBURG</text>
           </g>
-          <g transform="rotate(105)">
-            <polygon onclick="top.animate(12)" points="0,0 -100,-19 -100,19" style="fill:#4d6a75;"/>
-            <text onclick="top.animate(12)" class="so" x="-96" y="4">ZOSSEN</text>
+          <g transform="rotate(100)">
+            <polygon onclick="top.animate(13)" points="0,0 -100,-18 -100,18" style="fill:#4d6a75;"/>
+            <text onclick="top.animate(13)" class="so" x="-96" y="4">ZOSSEN</text>
           </g>
-          <g transform="rotate(127)">
-            <polygon onclick="top.animate(11)" points="0,0 -100,-19 -100,20" style="fill:#93b4c2;"/>
-            <text onclick="top.animate(11)" class="so" x="-96" y="4">LEINATAL</text>
+          <g transform="rotate(120)">
+            <polygon onclick="top.animate(12)" points="0,0 -100,-18 -100,18" style="fill:#93b4c2;"/>
+            <text onclick="top.animate(12)" class="so" x="-96" y="4">LEINATAL</text>
           </g>
-          <g transform="rotate(148)">
-            <polygon onclick="top.animate(10)" points="0,0 -100,-19 -100,19" style="fill:#638590;"/>
-            <text onclick="top.animate(10)" class="so" x="-96" y="0" style="font-size: 10px">NEUKIRCH/</text>
-            <text onclick="top.animate(10)" class="so" x="-96" y="8" style="font-size: 10px">LAUSITZ</text>
+          <g transform="rotate(140)">
+            <polygon onclick="top.animate(11)" points="0,0 -100,-18 -100,18" style="fill:#638590;"/>
+            <text onclick="top.animate(11)" class="so" x="-96" y="0" style="font-size: 10px">NEUKIRCH/</text>
+            <text onclick="top.animate(11)" class="so" x="-96" y="8" style="font-size: 10px">LAUSITZ</text>
           </g>
-          <g transform="rotate(169)">
-            <polygon onclick="top.animate(9)" points="0,0 -100,-19 -100,19" style="fill:#7da1aa;"/>
-            <text onclick="top.animate(9)" class="so" x="-96" y="4">WETZLAR</text>
+          <g transform="rotate(160)">
+            <polygon onclick="top.animate(10)" points="0,0 -100,-18 -100,18" style="fill:#7da1aa;"/>
+            <text onclick="top.animate(10)" class="so" x="-96" y="4">WETZLAR</text>
           </g>
-          <g transform="rotate(190)">
-            <polygon onclick="top.animate(8)" points="0,0 -100,-19 -100,19" style="fill:#4d6a75;"/>
-            <text onclick="top.animate(8)" class="so" x="-96" y="4">BAD SAAROW</text>
+          <g transform="rotate(180)">
+            <polygon onclick="top.animate(9)" points="0,0 -100,-18 -100,18" style="fill:#4d6a75;"/>
+            <text onclick="top.animate(9)" class="so" x="-96" y="4">BAD SAAROW</text>
           </g>
-          <g transform="rotate(211)">
-            <polygon onclick="top.animate(7)" points="0,0 -100,-19 -100,19" style="fill:#93b4c2;"/>
-            <text onclick="top.animate(7)" class="so" x="-96" y="4" style="font-size: 10px">WERNIGERODE</text>
+          <g transform="rotate(200)">
+            <polygon onclick="top.animate(8)" points="0,0 -100,-18 -100,18" style="fill:#93b4c2;"/>
+            <text onclick="top.animate(8)" class="so" x="-96" y="4" style="font-size: 10px">WERNIGERODE</text>
           </g>
-          <g transform="rotate(232)">
-            <polygon onclick="top.animate(6)" points="0,0 -100,-19 -100,19" style="fill:#638590;"/>
-            <text onclick="top.animate(6)" class="so" x="-96" y="4">GERA</text>
+          <g transform="rotate(220)">
+            <polygon onclick="top.animate(7)" points="0,0 -100,-18 -100,18" style="fill:#638590;"/>
+            <text onclick="top.animate(7)" class="so" x="-96" y="4">GERA</text>
           </g>
-          <g transform="rotate(254)">
-            <polygon onclick="top.animate(5)" points="0,0 -100,-19 -100,20" style="fill:#7da1aa;"/>
-            <text onclick="top.animate(5)" class="so" x="-96" y="4">MAINZ</text>
+          <g transform="rotate(240)">
+            <polygon onclick="top.animate(6)" points="0,0 -100,-18 -100,18" style="fill:#7da1aa;"/>
+            <text onclick="top.animate(6)" class="so" x="-96" y="4">MAINZ</text>
           </g>
-          <g transform="rotate(275)">
-            <polygon onclick="top.animate(4)" points="0,0 -100,-19 -100,19" style="fill:#4d6a75;"/>
-            <text onclick="top.animate(4)" class="so" x="-96" y="4">STAßFURT</text>
+          <g transform="rotate(260)">
+            <polygon onclick="top.animate(5)" points="0,0 -100,-18 -100,18" style="fill:#4d6a75;"/>
+            <text onclick="top.animate(5)" class="so" x="-96" y="4">STAßFURT</text>
           </g>
-          <g transform="rotate(296)">
-            <polygon onclick="top.animate(3)" points="0,0 -100,-19 -100,19" style="fill:#93b4c2;"/>
-            <text onclick="top.animate(3)" class="so" x="-96" y="4">DRESDEN</text>
+          <g transform="rotate(280)">
+            <polygon onclick="top.animate(4)" points="0,0 -100,-18 -100,18" style="fill:#93b4c2;"/>
+            <text onclick="top.animate(4)" class="so" x="-96" y="4">DRESDEN</text>
           </g>
-          <g transform="rotate(317)">
-            <polygon onclick="top.animate(2)" points="0,0 -100,-19 -100,19" style="fill:#638590;"/>
-            <text onclick="top.animate(2)" class="so" x="-96" y="4">BERLIN</text>
+          <g transform="rotate(300)">
+            <polygon onclick="top.animate(3)" points="0,0 -100,-18 -100,18" style="fill:#638590;"/>
+            <text onclick="top.animate(3)" class="so" x="-96" y="4">BERLIN</text>
           </g>
-          <g transform="rotate(338)">
-            <polygon onclick="top.animate(1)" points="0,0 -100,-19 -100,19" style="fill:#7da1aa;"/>
-            <text onclick="top.animate(1)" class="so" x="-96" y="4">SCHÖNEBECK</text>
+          <g transform="rotate(320)">
+            <polygon onclick="top.animate(2)" points="0,0 -100,-18 -100,18" style="fill:#7da1aa;"/>
+            <text onclick="top.animate(2)" class="so" x="-96" y="4">SCHÖNEBECK</text>
+          </g>
+          <g transform="rotate(340)">
+            <polygon onclick="top.animate(1)" points="0,0 -100,-18 -100,18" style="fill:#93b4c2;"/>
+            <text onclick="top.animate(1)" class="so" x="-96" y="4">ONLINE</text>
           </g>
         </g>
       </g>
@@ -215,76 +220,86 @@
     </svg>
     <div class="col-12 col-sm-12 col-md-4 col-lg-6 text-center large-text">
       <div id="text1" class="infotext pt-3">
-        <h1>SCHÖNEBECK</h1>
-        <div id="text1short">Badepark 3, 39218 Schönebeck</div>
-        <!--div id="text2long" style="display: none;">Lorem ipsum</div><div class="text-center"><button class="mt-3 btn btn-dark" style="bg-color:white;" onclick="showInfo(2, true)">Mehr Infos...</button></div-->
+        <h1>Online</h1>
+        <div id="text1short">Von deiner Couch aus</div>
+        <!--div id="text1long" style="display: none;">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...
+        </div>
+        <div class="text-center">
+          <button class="mt-3 btn btn-dark" style="bg-color:white;" onclick="showInfo(1, true)">Mehr Infos...</button>
+        </div-->
       </div>
       <div id="text2" class="infotext pt-3">
-        <h1>BERLIN</h1>
-        <div id="text2short">Kollwitzerstr. 76, 10435 Berlin</div>
+        <h1>SCHÖNEBECK</h1>
+        <div id="text2short">Badepark 3, 39218 Schönebeck</div>
+        <!--div id="text2long" style="display: none;">Lorem ipsum</div><div class="text-center"><button class="mt-3 btn btn-dark" style="bg-color:white;" onclick="showInfo(2, true)">Mehr Infos...</button></div-->
       </div>
       <div id="text3" class="infotext pt-3">
+        <h1>BERLIN</h1>
+        <div id="text3short">Kollwitzerstr. 76, 10435 Berlin</div>
+      </div>
+      <div id="text4" class="infotext pt-3">
         <h1>DRESDEN</h1>
-        <div id="text3short">
+        <div id="text4short">
           Große Meißner Str. 15, 01097 Dresden<br>
           Loschwitzer Straße 49, 01309 Dresden
         </div>
       </div>
-      <div id="text4" class="infotext pt-3">
-        <h1>STAßFURT</h1>
-        <div id="text4short">Förderstedter Straße 6b, 39418 Staßfurt</div>
-      </div>
       <div id="text5" class="infotext pt-3">
-        <h1>MAINZ</h1>
-        <div id="text5short">Schusterstraße 46-48, 55116 Mainz</div>
+        <h1>STAßFURT</h1>
+        <div id="text5short">Förderstedter Straße 6b, 39418 Staßfurt</div>
       </div>
       <div id="text6" class="infotext pt-3">
-        <h1>GERA</h1>
-        <div id="text6short">Clara-Zetkin-Straße 28, 07545 Gera</div>
+        <h1>MAINZ</h1>
+        <div id="text6short">Schusterstraße 46-48, 55116 Mainz</div>
       </div>
       <div id="text7" class="infotext pt-3">
-        <h1>WERNIGERODE</h1>
-        <div id="text7short">Im langen Schlage 22A, 38855 Wernigerode</div>
+        <h1>GERA</h1>
+        <div id="text7short">Clara-Zetkin-Straße 28, 07545 Gera</div>
       </div>
       <div id="text8" class="infotext pt-3">
-        <h1>BAD SAAROW</h1>
-        <div id="text8short">Ulmstr. 15, 154526 Bad Saarow</div>
+        <h1>WERNIGERODE</h1>
+        <div id="text8short">Im langen Schlage22A, 38855 Wernigerode</div>
       </div>
       <div id="text9" class="infotext pt-3">
-        <h1>WETZLAR</h1>
-        <div id="text9short">Schillerplatz13, 35578 Wetzlar</div>
+        <h1>BAD SAAROW</h1>
+        <div id="text9short">Ulmstr. 15, 154526 Bad Saarow</div>
       </div>
       <div id="text10" class="infotext pt-3">
-        <h1><span>NEUKIRCH /</span> <span>LAUSITZ</span></h1>
-        <div id="text10short">Wilthener Str. 55, 01904 Neukirch/Lausitz</div>
+        <h1>WETZLAR</h1>
+        <div id="text10short">Schillerplatz13, 35578 Wetzlar</div>
       </div>
       <div id="text11" class="infotext pt-3">
-        <h1>LEINATAL</h1>
-        <div id="text11short">Ortsstraße 29, 99894 Leinatal</div>
+        <h1><span>NEUKIRCH /</span> <span>LAUSITZ</span></h1>
+        <div id="text11short">Wilthener Str. 55, 01904 Neukirch/Lausitz</div>
       </div>
       <div id="text12" class="infotext pt-3">
-        <h1>ZOSSEN</h1>
-        <div id="text12short">Herman-Balzer-Straße 5, 15806 Zossen</div>
+        <h1>LEINATAL</h1>
+        <div id="text12short">Ortsstraße 29, 99894 Leinatal</div>
       </div>
       <div id="text13" class="infotext pt-3">
-        <h1>MAGDEBURG</h1>
-        <div id="text13short">Gellertstraße 1, 39108 Magdeburg</div>
+        <h1>ZOSSEN</h1>
+        <div id="text13short">Herman-Balzer-Straße 5, 15806 Zossen</div>
       </div>
       <div id="text14" class="infotext pt-3">
-        <h1>ULM</h1>
-        <div id="text14short">Magirus-Deutz-Straße 12, 89077 Ulm</div>
+        <h1>MAGDEBURG</h1>
+        <div id="text14short">Gellertstraße 1, 39108 Magdeburg</div>
       </div>
       <div id="text15" class="infotext pt-3">
-        <h1>WUPPERTAL</h1>
-        <div id="text15short">Heinz-Fangmann-Straße 2, 42287 Wuppertal</div>
+        <h1>ULM</h1>
+        <div id="text15short">Magirus-Deutz-Straße 12, 89077 Ulm</div>
       </div>
       <div id="text16" class="infotext pt-3">
-        <h1>POTSDAM</h1>
-        <div id="text16short">Luzernstraße 4, 14469 Potzdam</div>
+        <h1>WUPPERTAL</h1>
+        <div id="text16short">Heinz-Fangmann-Straße 2, 42287 Wuppertal</div>
       </div>
       <div id="text17" class="infotext pt-3">
+        <h1>POTSDAM</h1>
+        <div id="text17short">Luzernstraße 4, 14469 Potzdam</div>
+      </div>
+      <div id="text18" class="infotext pt-3">
         <h1>Dein Sofa</h1>
-        <div id="text17short">Zuhause oder im Cafe, wo du gerade bist</div>
+        <div id="text18short">Zuhause oder im Cafe, wo du gerade bist</div>
       </div>
     </div>
   </div>
