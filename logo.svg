@@ -1,5 +1,19 @@
-<svg viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 880 170" xmlns="http://www.w3.org/2000/svg">
     <style type="text/css"><![CDATA[
+
+        @font-face {
+          font-family: 'TCCEB';
+          font-style: normal;
+          font-weight: 400;
+          src: url('fonts/TCCEB.eot'); /* IE9 Compat Modes */
+          src: local(''),
+          url('fonts/TCCEB.eot') format('embedded-opentype'), /* IE6-IE8 */
+          url('fonts/TCCEB.woff2') format('woff2'), /* Super Modern Browsers */
+          url('fonts/TCCEB.woff') format('woff'), /* Modern Browsers */
+          url('fonts/TCCEB.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('fonts/TCCEB.svg') format('svg'); /* Legacy iOS */
+        }
+
         polygon.zoom {
           transform: scale(1.5);
           transition: transform 0.3s ease-in-out;
@@ -8,13 +22,13 @@
           transform: scale(2);
         }
         text {
-          font: 400 40px Roboto, sans-serif;
+          font: 400 40px TCCEB, sans-serif;
           fill: #0000;
           transition: fill 0.3s ease-in-out;
           cursor: default;
         }
         text.label {
-          font: 400 20px Roboto, sans-serif;
+          font: 400 20px TCCEB, sans-serif;
           fill: #0000;
         }
         text:has(+ a:hover) {
@@ -54,19 +68,19 @@
             <polygon points="0 0, 7 2.5, 0 5" />
         </marker>
     </defs>
-    <g transform="translate(640,50)">
+    <g transform="translate(520,40)">
         <a href="index.html" target='_top'>
             <image href="logo_w.png" x="0" y="0" width="300" height="94"/>
             <polygon id="hide-bg-image-triangles" points="0,0 100,0 80,93 0,93" style="fill:#e39706;"/>
         </a>
     </g>
-    <g transform="translate(140,50)">
+    <g transform="translate(120,48)">
         <image href="logo_w.png" x="0" y="0" width="300" height="94"/>
         <polygon id="hide-bg-image-triangles" points="0,0 100,0 80,93 0,93" style="fill:#e39706;"/>
         <polygon id="hide-bg-image-text" points="100,0 80,93 300,93 300,0" style="fill:#e39706;"/>
     </g>
     <!-- center 46 50 -->
-    <g transform="translate(186,100)">
+    <g transform="translate(166,88)">
 
         <!-- TODO text für mobile geräte drunter -->
         <text id="text1" x="100" y="15">AKADIA AKADEMIE</text>
@@ -93,8 +107,8 @@
         <text id="label1" class="label" x="45" y="-45">AKADIA AKADEMIE</text>
         <text id="label2" class="label" x="60" y="25">EXISTENZGRÜNDUNG</text>
         <text id="label3" class="label" x="-45" y="75">KARRIERE</text>
-        <text id="label4" class="label" x="-175" y="30">STANDORTE</text>
-        <text id="label5" class="label" x="-150" y="-45">DOZENTEN</text>
+        <text id="label4" class="label" x="-155" y="30">STANDORTE</text>
+        <text id="label5" class="label" x="-130" y="-45">DOZENTEN</text>
 
     </g>
     <script>
