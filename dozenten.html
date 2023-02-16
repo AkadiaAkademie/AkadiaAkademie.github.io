@@ -23,13 +23,15 @@
   <link rel="stylesheet" href="slotmachine.css">
   <style>
     /* Typography */
-    body {
+    .large {
       font-size: 70px;
       line-height: 1;
     }
+
     footer {
       line-height: 1.8;
     }
+
     h1 {
       display: inline-block;
       vertical-align: middle;
@@ -55,7 +57,7 @@
 
     function buildSlotItem(text) {
       var el = $('<div class="slotm_item"></div>');
-      var id=Math.random().toString(36).replace(/[^a-z]+/g, '')
+      var id = Math.random().toString(36).replace(/[^a-z]+/g, '')
       /*el.html(`
         <h1>` + text[0] + `</h1><br>
         <div class="plain-text">` + text[1] + `</div>
@@ -147,8 +149,22 @@
   <object data="logo.svg" width="100%" class="header-object"></object>
 </div>
 
+<div class="jumbotron d-flex justify-content-center p-5 m-0">
+  <div class="row">
+    <div class="col-12 mb-3 text-center">
+      <h1 class="align-self-center">Dozenten</h1>
+    </div>
+    <div class="col-12 text-center">
+      Du möchtest auch Dozent bei uns werden?
+      <a href="mailto:kontakt@akadia-akademie.de?subject=Dozent werden&body=Hallo Akadia Akademie,%0D%0A%0D%0AIch möchte auch Dozent werden.%0D%0A%0D%0A">
+        kontakt@akadia-akademie.de
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- Inhalt: Slot Machine -->
-<div class="container-fluid pt-5">
+<div class="container-fluid pt-5 large">
   <div class="row">
     <div class="col-12 col-sm-4 col-md-3 slotm">
       <div class="slotm_mask" id="iconbox">
@@ -204,7 +220,8 @@
 <footer class="container-fluid content text-left pb-0">
   <div class="row justify-content-center">
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
-      <a id="team-button" onclick="showTeam()">Unser Team <span id="team-arrow">&#129047;</span></a> <!--oder Kontakt (aufklappen)-->
+      <a id="team-button" onclick="showTeam()">Unser Team <span id="team-arrow">&#129047;</span></a>
+      <!--oder Kontakt (aufklappen)-->
     </div>
     <div class="col-8 col-md-5 pt-3 pt-lg-0 col-lg-3">
       <a href="https://www.facebook.com/AkadiaAkademie/">
