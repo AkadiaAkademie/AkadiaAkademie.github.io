@@ -20,6 +20,30 @@
       max-height:70vh;
       width:100vw;
     }
+    #parent_div {
+      position: relative;
+      background-color: #fff0;
+      overflow: hidden;
+    }
+    #background {
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      right: -100px;
+      bottom: -100px;
+      background-color: red;
+      filter: blur(10px);
+      z-index: -1;
+    }
+    .blurred-bg {
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(100, 100, 100, 0.7)), url("img/StandorteBG_c.jpeg") no-repeat center top;
+      height: 200%;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -29,7 +53,8 @@
   <object data="logo.svg" width="100%" class="header-object"></object>
 </div>
 
-<div class="jumbotron text-center p-0 m-0">
+<div id="parent_div" class="jumbotron text-center p-0 m-0">
+  <div id="background" class="blurred-bg"></div>
   <div class="carousel slide"
        data-ride="carousel" data-pause="false">
     <ol class="carousel-indicators">
