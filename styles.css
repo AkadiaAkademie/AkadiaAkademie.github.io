@@ -37,13 +37,14 @@ a {
 a:hover {
     color: #e39706;
 }
-.jumbotron, #services, #neuigkeiten {
+.jumbotron, #sponsoren {
+    background-color: #93b4c2;
     font-family: TCCEB, sans-serif;
     line-height: 1.2;
     border-radius: 0;
     margin-bottom: 0;
 }
-.orange {
+.orange, #sponsoren.orange {
     background-color: #e39706;
     color: #fff;
 }
