@@ -93,7 +93,8 @@
       timeoutId = setTimeout(animate, (click ? 10000 : 2000));
 
       if (!targetId) {
-        targetId = Math.floor(((arc - (360/n)) % 360) / n + 1);
+        targetId = Math.floor(arc * n / 360) % n;
+        if (targetId == 0) targetId = n;
       }
       for (let i = 1; i <= n; i++) {
         //document.getElementById("text" + i).style.display = 'none';
