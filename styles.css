@@ -160,3 +160,7 @@ a:has(img.social-icon) {
 .powered-footer {
     color: #bbbbbb;
 }
+.powered-footer a {
+    text-decoration: underline;
+    color: #999999;
+}
